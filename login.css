@@ -1,0 +1,117 @@
+*{
+   margin: 0; 
+   padding: 0;      /* espaçamento interno */
+   box-sizing: border-box;
+}
+
+body{
+   font-family: "Montserrat" ;
+   color: #ffffff;
+   display: flex;    /* Elemento pai/Flex container*/
+   height: 100vh;    /* VH = viewport height */
+   justify-content: center;
+   align-items: center;
+   background: url(https://images.unsplash.com/photo-1549916281-80e7650b83fa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
+    background-size: cover;
+    background-position: 60%;
+    padding: 20px;
+}
+
+button{
+    padding: 14px;
+    align-self: center;
+    width: 160px;
+    border-radius: 30px;    
+    background-image: linear-gradient(#256a8a, #3393c1);
+    border: solid 1px #256a8a ;
+    border-right-width: 4px ;
+    border-bottom-width: 4px;
+    font-size: 16px ;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+button:hover{
+    cursor: pointer;
+    background-image: linear-gradient(#256a8a,#054461 );
+}
+
+input{
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: solid 2px black;
+    background-color: #f1f1f1;
+}
+
+
+form{
+    /* flex child */
+    backdrop-filter: blur(20px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /* border: 1px solid white; */
+    padding: 50px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: iniciar 1.6s ease forwards;
+}
+
+@keyframes iniciar{
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+a{
+    color: #ffffff;
+    font-size: 18px;
+}
+
+h1{
+    font-size: 24px ;
+
+}
+
+
+.barra-horizontal{
+    background-color: blue;
+    height: 5px;
+    width: 210px;
+}
+
+.campo-input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lembrar-me{
+    display: flex;
+    gap: 5px;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: rgb(252, 252, 255);
+}
+
+.cadastro{
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+}
+
+.input{
+    min-width: 280px;
+    border-radius: 10px;
+    border: 2px black solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
