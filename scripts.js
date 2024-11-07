@@ -1,3 +1,4 @@
+// Menu mobile
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
       this.mobileMenu = document.querySelector(mobileMenu);
@@ -43,49 +44,24 @@ class MobileNavbar {
   );
   mobileNavbar.init();
 
-  // java header grudado lindo
+ // Animação de scrollagem
+ document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Para de observar depois que aparece
+      }
+    });
+  }, { threshold: 0.1 });
 
-  // window.onscroll = function() {myFunction()};
-
-  // var header = document.getElementById("myHeader");
-  // var sticky = header.offsetTop;
-  
-  // function myFunction() {
-  //   if (window.pageYOffset > sticky) {
-  //     header.classList.add("sticky");
-  //   } else {
-  //     header.classList.remove("sticky");
-  //   }
-  // }
-
-
-  // When the user scrolls the page, execute myFunction
-
-window.onscroll = function() {myFunction()};
+  document.querySelectorAll('.area-dev div').forEach(div => {
+    observer.observe(div);
+  });
+});
 
 
-// Get the header
-
-var header = document.getElementById("myHeader");
 
 
-// Get the offset position of the navbar
-
-var sticky = header.offsetTop;
 
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-
-function myFunction() {
-
-  if (window.pageYOffset > sticky) {
-
-    header.classList.add("sticky");
-
-  } else {
-
-    header.classList.remove("sticky");
-
-  }
-
-}
