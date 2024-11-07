@@ -32,6 +32,7 @@ body * {
 .left-login>h1 {
     font-size: 3vw;
     color: #77adff;
+    text-align: center;
 }
 
 .right-login {
@@ -44,35 +45,44 @@ body * {
 
 .card-login {
     width: 70%;
+    max-width: 650px; /* Define uma largura máxima para responsividade */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px 35px;
+    padding: 65px 0px;
     background: #2f2841;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
 }
 
-.card-login>h1 {
+.card-login > h1 {
+    position: relative;
+    top: -20px;
     color: #4f96ff;
     font-weight: 800;
     margin: 0;
+    text-align: center;
 }
 
 .textfield {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin: 10px 0px;
+    width: 100%;
 }
 
-.textfield>select {
-    width: 100%;
+/* Estilo para o select, label e botão */
+.textfield > select,
+.textfield > label,
+.btn-login {
+    width: 70%;         /* Preenche a largura disponível */
+    max-width: 100%;     /* Limita ao máximo da largura do contêiner pai */
     border: none;
     border-radius: 10px;
-    padding: 15px;
+    padding: 18px 0px;
     background: #514869;
     color: #f0ffffde;
     font-size: 12pt;
@@ -80,33 +90,34 @@ body * {
     outline: none;
     box-sizing: border-box;
     cursor: pointer;
+    text-align: center;
 }
 
-.btn-login{
-    width: 100%;
-    max-width: 180px;
-    padding: 16px 0px;
-    margin: 25px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    text-transform: uppercase;
+/* Estilos específicos para o botão */
+.btn-login {
+    background: #4f96ff;
     font-weight: 800;
     letter-spacing: 2px;
-    background: #4f96ff;
-    cursor: pointer;
-    /* box-shadow: 0px 10px 40px -12px #00eeff52; */
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px; /* Espaçamento entre o botão e outros elementos */
     box-shadow: -2px 2px 0px 1px #fff;
 }
 
-.btn-login a {
-    display: block;
-    text-decoration: none;
-    color: #ccc;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+/* Responsividade */
+@media (max-width: 500px) {
+    .card-login {
+        width: 90%; /* Aumenta a largura em telas menores */
+        padding: 20px;
+    }
+    .textfield > select,
+    .textfield > label,
+    .btn-login {
+        font-size: 10pt; /* Ajusta o tamanho da fonte para caber em telas pequenas */
+        padding: 10px;
+    }
 }
+
 
 @media only screen and (max-width: 950px) {
     .card-login {
