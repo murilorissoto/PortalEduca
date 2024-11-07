@@ -1,229 +1,882 @@
-/* styles.css */
-
-/* General styling for the entire page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root{
+  --azul: rgba(7, 166, 246, 0.782);
 }
 
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(320px, 1fr)
+  ); /* Colunas ajustadas para melhorar a harmonia */
+  padding: 50px;
+  gap: 5px; /* Aumenta o espaçamento entre os botões */
+  place-items: center;
+  margin: 5px;
+  animation: fadeIn 1.2s ease-in forwards; /* Animação fade in */
+}
+
+.btn {
+  margin: 0;
+  width: 100%; 
+  padding: 15px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border: none; 
+  border-radius: 5px;
+  background-color: rgb(252, 252, 252);
+  font-weight: 580;
+  letter-spacing: 2px;
+  color: #000000; 
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #c9c9c9; 
+}
+
+.destaque{
+  color: var(--azul);
+}
+.page-atual{
+  border-bottom: 3px solid rgba(7, 166, 246, 0.782);
+  padding-left: 2px;
+}
+/* Conteudo dentro do main */
+main {
+  background: url(Img/background.jpg) no-repeat center;
+  background-size: cover;
+  background-color: #afafaf;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+}
+.main-left { /* Texto a esquerda */ 
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-right { /* Imagem a direita */
+  width: 40%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main img {
+  height: 28vw;
+  width: 40vw;
+  animation: animationRight 1.2s ease-in-out;
+}
+.textfield { /*Area do texto*/
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: 2vw;
+}
+.textfield h1, h5{
+  animation: animationLeft 1.2s ease-in-out;
+}
+
+/* Section - Matérias */
+/* Caixa de imagem */
+#picture_input {
+  display: none;
+}
+
+.picture { 
+  position: relative;
+  top: 0px;
+  width: 100%;
+  max-width: 600px; /* Aumenta a largura máxima para telas maiores */
+  min-width: 300px; /* Define uma largura mínima para manter a legibilidade */
+  aspect-ratio: 16/9; /* Mantém a proporção 16:9 */
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed currentColor;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out, outline 300ms ease-in-out;
+}
+.titulo{
+  position: absolute;
+  width: 101%;
+  height: 25px;
+  top: -25px;
+  background-color: #23232e;
+}
+.titulo h1{
+  position: absolute;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.picture img {
+  max-width: 100%; /* Limita a largura da imagem ao tamanho do label */
+  max-height: 100%; /* Limita a altura da imagem ao tamanho do label */
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+
+.picture:hover {
+  color: #777;
+  background: #ccc;
+}
+
+.picture:active {
+  border-color: red;
+  color: turquoise;
+  background: #eee;
+}
+
+.picture:focus {
+  color: #777;
+  background: #ccc;
+  box-shadow: 0 0 10px red;
+}
+
+.container-licao {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materia {
+  width: 60%;
+  height: 550px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arquivos{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Descrição */
+textarea {
+  outline: rgb(0, 0, 0);
+  width: 100%;
+  max-width: 400px; /* Igual ao link_area e file_area */
+  padding: 10px;
+  border: 1px solid #ccc; /* Para manter consistência com o input de links */
+  border-radius: 4px;
+}
+
+.descricao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px; /* Igual ao link_area e file_area */
+  margin-top: 20px; /* Adicionando espaçamento semelhante */
+}
+
+/* Botão Descrição */
+.save-text {
+  width: 100%;
+  max-width: 400px; /* Igual ao download_button */
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: rgba(7, 166, 246, 0.782);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: background-color 300ms ease-in-out;
+}
+
+.save-text:hover {
+  background-color: rgb(34, 63, 131);
+}
+
+
+/* Area para descarregar arquivos e links */
+.link_area,
+.file_area {
+  margin-top: 20px; /* Espaço entre as áreas */
+}
+
+.file_label {
+  display: block; /* Faz o label ocupar toda a largura */
+  margin-bottom: 5px; /* Espaço entre o label e o input */
+  font-family: sans-serif;
+}
+
+.file_preview {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  padding: 10px; 
+}
+
+.link_area {
+  display: flex;
+  flex-direction: column;
+}
+
+.link_area input {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px; /* Limite de largura para o campo de link */
+}
+
+input[type="file"] {
+  color: transparent; /* Oculta o nome do arquivo */
+}
+
+/* Dowload button */
+.download_button {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: rgba(7, 166, 246, 0.782); /* Cor do botão */
+  color: white; /* Cor do texto */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: background-color 300ms ease-in-out;
+}
+
+.download_button:hover {
+  background-color: rgb(34, 63, 131); 
+}
+
+/* Esconde a imagem */
+.hidden {
+  display: none;
+}
+
+.picture img {
+  width: 100%;
+  height: auto; 
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Início invisível */
+  }
+  to {
+    opacity: 1; /* Fica visível */
+  }
+}
+
+@keyframes animationLeft {
+  from{
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationRight {
+  from{
+    opacity: 0;
+    transform: translateX(250px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* MENU RESPONSIVO */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  height: 10vh;
+  background: #0b0b0e;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+  margin: 10px;
+  padding: 10px;
+  font-weight: 600;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+@media (max-width: 999px) {
+  .mobile-menu div {
+    z-index: 10000;
+    width: 32px;
+    margin: 8px;
+    background: #fff;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+  }
+
+  @media (max-width: 999px) {
+    body {
+      z-index: 1000;
+    }
+    nav {
+      position: relative;
+    }
+    .nav-list {
+      position: absolute;
+      top: 10vh;
+      right: 0;
+      width: 100vw;
+      height: 30vh;
+      background: #0b0b0e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      z-index: 100;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      z-index: 10000;
+      display: block;
+    }
+  }
+
+  .nav-list.active {
+    transform: translateY(0);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateY(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .textfield {
+    display: none;
+  }
+  .container {
+    width: 100%;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  main img {
+    width: 100vw;
+    height: 100%;
+  }
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(100px, 1fr)
+    ); /* Colunas ajustadas para melhorar a harmonia */
+    margin: 5px;
+  }
+}
+@media screen and (max-width: 1068px) {
+  .materia {
+    width: 100%; /* Ocupa 100% da largura */
+    margin-bottom: 20px; /* Espaço entre .materia e .arquivos */
+  }
+  .arquivos {
+    width: 100%; /* Ocupa 100% da largura */
+    flex-direction: column; /* Garantir que continue em coluna */
+  }
+}
+
+/* CALENDARIO */
 .wrapper {
-    max-width: 1100px;
-    margin: 15px auto;
+  max-width: 1100px;
+  margin: 15px auto;
 }
 
 /* Calendar container */
 .container-calendar {
-    background: #ffffff;
-    padding: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-    overflow: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: space-between;
+  background: #ffffff;
+  padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Event section styling */
 #event-section {
-    padding: 10px;
-    background: #f5f5f5;
-    margin: 20px 0;
-    border: 1px solid #ccc;
+  padding: 10px;
+  background: #f5f5f5;
+  margin: 20px 0;
+  border: 1px solid #ccc;
 }
 
 .container-calendar #left h1 {
-    color: rgb(15, 134, 190);
-    text-align: center;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 10px 0;
+  color: rgb(15, 134, 190);
+  text-align: center;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 10px 0;
 }
 
 #event-section h3 {
-    color: rgb(15, 134, 190);
-    font-size: 18px;
-    margin: 0;
+  color: rgb(15, 134, 190);
+  font-size: 18px;
+  margin: 0;
 }
 
 #event-section input[type="date"],
 #event-section input[type="text"] {
-    margin: 10px 0;
-    padding: 5px;
-    width: 80%;
+  margin: 10px 0;
+  padding: 5px;
+  width: 80%;
 }
 
 #event-section button {
-    background: rgb(0, 79, 128);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+  background: rgb(0, 79, 128);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .event-marker {
-    position: relative;
+  position: relative;
 }
 
 .event-marker::after {
-    content: '';
-    display: block;
-    width: 6px;
-    height: 6px;
-    background-color: rgb(95, 241, 95);
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(95, 241, 95);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /* event tooltip styling */
 .event-tooltip {
-    position: absolute;
-    background-color: rgba(234, 232, 232, 0.763);
-    color: black;
-    padding: 10px;
-    border-radius: 4px;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    transition: all 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  position: absolute;
+  background-color: rgba(234, 232, 232, 0.763);
+  color: black;
+  padding: 10px;
+  border-radius: 4px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .event-marker:hover .event-tooltip {
-    display: block;
+  display: block;
 }
 
 /* Reminder section styling */
 #reminder-section {
-    padding: 10px;
-    background: #f5f5f5;
-    margin: 20px 0;
-    border: 1px solid #ccc;
+  padding: 10px;
+  background: #f5f5f5;
+  margin: 20px 0;
+  border: 1px solid #ccc;
 }
 
 #reminder-section h3 {
-    color: rgb(15, 134, 190);
-    font-size: 18px;
-    margin: 0;
+  color: rgb(15, 134, 190);
+  font-size: 18px;
+  margin: 0;
 }
 
 #reminderList {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 #reminderList li {
-    margin: 5px 0;
-    font-size: 16px;
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 /* Style for the delete buttons */
 .delete-event {
-    background: rgb(246, 73, 73);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-left: 10px;
-    align-items: right;
+  background: rgb(246, 73, 73);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  align-items: right;
 }
 
 /* Buttons in the calendar */
 .button-container-calendar button {
-    cursor: pointer;
-    background: rgb(0, 79, 128);
-    color: #fff;
-    border: 1px solid rgb(0, 79, 128);
-    border-radius: 4px;
-    padding: 5px 10px;
+  cursor: pointer;
+  background: rgb(0, 79, 128);
+  color: #fff;
+  border: 1px solid rgb(0, 79, 128);
+  border-radius: 4px;
+  padding: 5px 10px;
 }
 
 /* Calendar table */
 .table-calendar {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .table-calendar td,
 .table-calendar th {
-    padding: 5px;
-    border: 1px solid #e2e2e2;
-    text-align: center;
-    vertical-align: top;
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
 }
 
 /* Date picker */
 .date-picker.selected {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    outline: 1px dashed #00BCD4;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  outline: 1px dashed #00BCD4;
 }
 
 .date-picker.selected span {
-    border-bottom: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
 }
 
 /* Day-specific styling */
 .date-picker:nth-child(1) {
-    color: rgb(255, 105, 105);
-    /* Sunday */
+  color: rgb(255, 105, 105);
+  /* Sunday */
 }
 
 /* Day-specific styling */
 .date-picker:nth-child(7) {
-    color: rgb(255, 105, 105);
-    /* Sunday */
+  color: rgb(255, 105, 105);
+  /* Sunday */
 }
 .date-picker:nth-child(6) {
-    color: rgb(0, 0, 0);
-    /* Friday */
+  color: rgb(0, 0, 0);
+  /* Friday */
 }
 
 /* Hover effect for date cells */
 .date-picker:hover {
-    background-color: rgb(137, 198, 255);
-    color: white;
-    cursor: pointer;
+  background-color: rgb(137, 198, 255);
+  color: white;
+  cursor: pointer;
 }
 
 /* Header for month and year */
 #monthAndYear {
-    text-align: center;
-    margin-top: 0;
+  text-align: center;
+  margin-top: 0;
 }
 
 /* Navigation buttons */
 .button-container-calendar {
-    position: relative;
-    margin-bottom: 1em;
-    overflow: hidden;
-    clear: both;
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
 }
 
 #previous {
-    float: left;
+  float: left;
 }
 
 #next {
-    float: right;
+  float: right;
 }
 
 /* Footer styling */
 .footer-container-calendar {
-    margin-top: 1em;
-    border-top: 1px solid #dadada;
-    padding: 10px 0;
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
 }
 
 .footer-container-calendar select {
-    cursor: pointer;
-    background: #ffffff;
-    color: #585858;
-    border: 1px solid #bfc5c5;
-    border-radius: 3px;
-    padding: 5px 1em;
+  cursor: pointer;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
 }
+
+
+/* Estilos principais */
+.wrapper {
+  max-width: 1100px;
+  margin: 15px auto;
+  padding: 0 10px;
+}
+
+/* Calendário Responsivo */
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#left, #right {
+  flex: 1;
+  min-width: 300px;
+}
+
+#event-section, #reminder-section {
+  padding: 10px;
+  background: #f5f5f5;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+}
+
+/* Ajuste da tabela do calendário */
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+.table-calendar td, .table-calendar th {
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* Ajuste do cabeçalho do mês e ano */
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+/* Estilos dos botões de navegação */
+.button-container-calendar button {
+  cursor: pointer;
+  background: rgb(0, 79, 128);
+  color: #fff;
+  border: 1px solid rgb(0, 79, 128);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .container-calendar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #monthAndYear {
+    font-size: 16px;
+  }
+
+  .table-calendar {
+    font-size: 12px;
+  }
+
+  .button-container-calendar button {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 5px;
+  }
+
+  #left, #right {
+    min-width: 100%;
+  }
+
+  .table-calendar {
+    font-size: 11px;
+  }
+
+  #event-section, #reminder-section {
+    margin: 10px 0;
+    padding: 8px;
+  }
+
+  .button-container-calendar button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  #monthAndYear {
+    font-size: 14px;
+  }
+}
+
+/* Emoji */
+.student{
+  position: relative;
+  top: 40px;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #ffcd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face::before {
+  content: '';
+  position: absolute;
+  top: 140px; /* Posiciona o "sorriso" um pouco mais abaixo */
+  width: 50px; /* Reduz a largura para um sorriso menor */
+  height: 20px; /* Reduz a altura para uma curva mais suave */
+  background: #000000;
+  border-bottom-left-radius: 30px; /* Reduz os raios de borda para curvar mais */
+  border-bottom-right-radius: 30px;
+  transition: 0.5s;
+}
+
+.eyes{
+  position: relative;
+  top: -30px;
+  display: flex;
+}
+
+.eyes .eye{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: #fff;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+
+.eyes .eye:before{
+  content: '';
+  position: absolute;
+  top: 55%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+}
+
