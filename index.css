@@ -54,8 +54,20 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   height: 100%;
+  opacity: 0 ;
+  animation: fadeIn 1.5s ease-in forwards ;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .titulo h1 {
@@ -168,7 +180,7 @@ nav {
       top: 10vh;
       right: 0;
       width: 100vw;
-      height: 30vh;
+      height: 40vh;
       background: #0b0b0e;
       flex-direction: column;
       align-items: center;
@@ -388,7 +400,8 @@ h5 {
 .container-conteudo li {
   font-family: sans-serif;
   font-size: 17px;
-  padding: 23px;
+  display: block;
+  padding: 15px;
 }
 
 .container-conteudo li:hover {
@@ -396,7 +409,6 @@ h5 {
   transition: 0.5s ease-in-out;
   color: #fff;
   border-radius: 30px;
-  padding: 17px 20px 17px 20px;
 }
 
 /* Grid Conteúdo */
@@ -483,11 +495,12 @@ h5 {
   justify-items: center;
   cursor: pointer;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  margin: 20px;
-  gap: 15px;
+  margin: 15px;
+  box-sizing: border-box;
 }
 
 .area-dev div {
+  margin: 5px;
   padding: 20px;
   text-align: center;
   border: 1px solid rgb(96, 96, 96);
@@ -518,7 +531,6 @@ h5 {
 .area-dev div.visible:nth-child(4){
   transform: translateX(0);
 }
-
 
 /* .area-dev div:hover{
   transform: scale(1.03);
@@ -571,7 +583,7 @@ h5 {
 
 /* Footer */
 footer {
-  height: 65vh;
+  height: 90vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Centraliza os elementos no footer */
@@ -659,7 +671,7 @@ footer p {
   color: #fff;
 }
 
-/* Ajustes para telas menores */
+/* Ajustes para telas menores Footer */
 @media (max-width: 768px) {
   footer {
     flex-direction: column;
@@ -687,5 +699,28 @@ footer p {
 
   .tit {
     padding-top: 20px;
+  }
+}
+
+/* Responsividade para telas menores que 400px */
+@media (max-width: 450px) {
+  .area-dev {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    grid-template-columns: 1fr; /* Ajusta para uma coluna */
+  }
+
+  h5 {
+    display: none;
+  }
+
+  .area-dev div {
+    margin: 0;
+    margin-top: 5px;
+    padding: 10px; /* Reduz o padding para melhor ajuste em telas pequenas */
+    opacity: 1; /* Mostra imediatamente em telas pequenas */
+    transform: none; /* Remove o deslocamento lateral */
+    transition: opacity 1s ease-in-out; /* Transição mais rápida */
   }
 }
