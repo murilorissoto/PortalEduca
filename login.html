@@ -1,41 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario-Login</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="https://kit.fontawesome.com/bfb4213bb3.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="login.js" defer></script>
+    <script src="https://kit.fontawesome.com/853b222c5b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container">
+        <img class="perfil-icon" src="Img/do-utilizador (2).png" alt="Ícone de perfil" />
 
-    <form action="">
-        <div class="titulo">
-            <h1>Faça o seu login</h1>
-            <div class="barra-horizontal"></div>
-        </div>
+        <header>
+            <h1>Login</h1>
+        </header>
 
-        <div class="campo-input">
-            <label for="email">Seu e-mail*</label>
-            <input type="email" id="email">
-        </div>
-        
-        <div class="campo-input">
-            <label for="password">Sua senha*</label>
-            <input type="password" id="password">
-        </div>
+        <main>
+            <div id="login-form">
+                <h2>Entre com suas credenciais</h2>
+                <h4>Aluno / Docente</h4>
 
-        <div class="lembrar-me">
-            <input type="checkbox">
-            <p>Lembrar-me</p>
-        </div>
+                <!-- Formulário com ícones integrados -->
+                <form id="Loginform" onsubmit="handleSubmit(event)">
+                    <div class="user">
+                        <div class="icon">
+                            <img src="Img/usuario.png" alt="Email ícone" />
+                        </div>
+                        <input type="email" id="loginEmail" name="loginEmail" required placeholder="Digite seu email">
+                    </div>
 
-        <button>Entrar</button>
+                    <div class="user">
+                        <div class="icon-2">
+                            <img src="Img/cadeado.png" alt="Cadeado ícone" />
+                        </div>
+                        <input type="password" id="loginSenha" name="loginSenha" required placeholder="Digite sua senha">
+                    </div>
 
-        <p class="cadastro">
-           Faça seu <a href="cadastro.html"><strong>Cadastro</strong></a> aqui
-        </p>
-    </form>
-
+                    <div class="center">
+                        <button class="button" type="submit">Entrar</button>
+                        <div id="loginError" style="color:red; display:none;"></div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
