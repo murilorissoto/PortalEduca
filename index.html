@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal</title>
+    <title>Portal Educa</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="scripts.js" defer></script>
     <script
       src="https://kit.fontawesome.com/853b222c5b.js"
       crossorigin="anonymous"
@@ -30,6 +31,7 @@
       </nav>
     </header>
     <main>
+      <div id="app"></div>
       <div class="titulo">
         <h2>Educa Sesi-Senai</h2>
         <h1>Foque nos Estudos</h1>
@@ -41,31 +43,43 @@
       <h1 class="heading">Nossos Serviços</h1>
       <div class="box-container">
         <div class="box">
-          <img src="Img/css-3.png" alt="" />
-          <h3>Html</h3>
-          <p>Lorem ipsum dolor sit amet</p>
-          <a href="" class="btn">Leia mais</a>
+          <img src="Img/PassaporteFuturo.jpg" alt="" />
+          <h3>Passaporte Pro Futuro</h3>
+          <p>
+            Oferecemos a nossos estudantes a oportunidade de estudar fora com
+            bolsa !
+          </p>
+          <a href="https://www.estudarfora.org.br/programa-passaporte-para-o-futuro-sesi-sp/" class="btn">Leia mais</a>
         </div>
 
         <div class="box">
-          <img src="Img/css-3.png" alt="" />
-          <h3>Css</h3>
-          <p>Lorem ipsum dolor sit amet</p>
-          <a href="" class="btn">Leia mais</a>
+          <img src="Img/EspaçoMaker.png" alt="" />
+          <h3>Espaço Maker</h3>
+          <p>
+            Contamos com um espaço maker para explorarmos o lado criativo e
+            tecnológico de nossos alunos
+          </p>
+          <a href="https://www.sesisp.org.br/educacao/espaco-maker" class="btn">Leia mais</a>
         </div>
 
         <div class="box">
-          <img src="Img/html.png" alt="" />
-          <h3>Java</h3>
-          <p>Lorem ipsum dolor sit amet</p>
-          <a href="" class="btn">Leia mais</a>
+          <img src="Img/Clube.jpg" alt="" />
+          <h3>Espaço</h3>
+          <p>
+            Clube com espaço para esportes, piscina para família, academia,
+            ambiente de socialização e muito mais !
+          </p>
+          <a href="https://sorocaba.sesisp.org.br" class="btn">Leia mais</a>
         </div>
 
         <div class="box">
-          <img src="Img/html.png" alt="" />
-          <h3>JS</h3>
-          <p>Lorem ipsum dolor sit amet</p>
-          <a href="" class="btn">Leia mais</a>
+          <img src="Img/Prof.avif" alt="" />
+          <h3>Equipe</h3>
+          <p>
+            Nossa equipe é formada por ótimos profissionais especializados na
+            area
+          </p>
+          <a href="https://www.portaldaindustria.com.br/publicacoes/2018/6/os-professores-da-rede-sesi-de-ensino-perfil-atual-e-possibilidades-de-aperfeicoamento/" class="btn">Leia mais</a>
         </div>
       </div>
     </div>
@@ -78,10 +92,9 @@
 
     <div class="container-conteudo">
       <ul>
-        <li>New</li>
-        <li>Vestibular</li>
-        <li>Web</li>
-        <li>Portfolio</li>
+        <li>Exatas</li>
+        |
+        <li>Humanas</li>
       </ul>
     </div>
 
@@ -93,68 +106,59 @@
       <div
         class="space row-2"
         style="
-          background-image: url(https://plus.unsplash.com/premium_photo-1672256330854-98c717493128?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background-image: url(https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
         "
       >
         Matemática
       </div>
-      <div
-        class="space col-2"
-        style="
-          background-image: url(https://images.unsplash.com/photo-1543165796-5426273eaab3?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-        "
-      >
-        Português
-      </div>
-      <div
-        class="space row-2"
-        style="
-          background-image: url(https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=1774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-        "
-      >
+      <div class="space col-2 img" style="background: url(https://www.souzaaranhamachado.com.br/wp-content/uploads/2022/03/Hist%C3%B3ria.jpg)">
         História
       </div>
       <div
         class="space row-3"
         style="
-          background-image: url(https://plus.unsplash.com/premium_photo-1681487118711-2c8e629d4313?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background-image: url(https://images.unsplash.com/photo-1567539159398-3174869584e8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGxpdGVyYXR1cmV8ZW58MHx8MHx8fDA%3D);
         "
       >
+        Português
+      </div>
+      <div class="space row-3" style="background-image: url(Img/Bio.jpg)">
         Biologia
       </div>
       <div
-        class="space"
+        class="space row-3"
         style="
-          background-image: url(https://images.unsplash.com/photo-1629470937900-f9ef0f2a8086?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+          background: url(https://media.istockphoto.com/id/1389467326/pt/vetorial/brain.jpg?s=612x612&w=0&k=20&c=aKuE75JJ-bqMIP62Dp-cyHS5Hik9TuTAfYgfRCzMOEA=)
+            no-repeat;
         "
       >
-        Sociologia
+        Filosofia
       </div>
-      <div
-        class="space col-2"
-        style="
-          background-image: url();
-        "
-      >
-        Edf
+      <div class="space col-2" style="background: url(https://cursinhoparamedicina.com.br/wp-content/uploads/2023/04/fisica.jpg) center">
+        Física
       </div>
     </div>
 
     <br />
     <br />
     <br />
+    <br>
+    <br>
 
     <div class="equipe">
       <h1>Conheça nossa equipe</h1>
     </div>
 
+    <br />
+
     <div class="area-dev">
       <div>
-        <img
-          class="foto-dev"
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-        <h2>Programador</h2>
+        <a href="https://github.com/murilorissoto"
+          ><img
+            class="foto-dev"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+        /></a>
+        <h2>Murilo Antunes</h2>
         <h5>Web-Developer</h5>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab beatae,
@@ -164,11 +168,12 @@
         </p>
       </div>
       <div>
-        <img
-          class="foto-dev"
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-        <h2>Programador</h2>
+        <a href="https://trincademes.github.io/"
+          ><img
+            class="foto-dev"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+        /></a>
+        <h2>Pedro Vieira</h2>
         <h5>Web-Developer</h5>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab beatae,
@@ -178,11 +183,42 @@
         </p>
       </div>
       <div>
-        <img
-          class="foto-dev"
-          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-        <h2>Programador</h2>
+        <a href="https://rekyrt24.github.io/Portifolio/"
+          ><img
+            class="foto-dev"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+        /></a>
+        <h2>João Victor</h2>
+        <h5>Web-Developer</h5>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab beatae,
+          impedit odit delectus animi ad provident, facere hic molestiae
+          officiis expedita ex assumenda tempore nobis odio, doloremque aliquam
+          vero sunt?
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/erickiks"
+          ><img
+            class="foto-dev"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+        /></a>
+        <h2>Erick da Silva</h2>
+        <h5>Web-Developer</h5>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab beatae,
+          impedit odit delectus animi ad provident, facere hic molestiae
+          officiis expedita ex assumenda tempore nobis odio, doloremque aliquam
+          vero sunt?
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/PhedroSilva"
+          ><img
+            class="foto-dev"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+        /></a>
+        <h2>Pedro Silva</h2>
         <h5>Web-Developer</h5>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab beatae,
@@ -200,13 +236,13 @@
     <footer>
       <div class="info">
         <h3 class="tit">Telefone</h3>
-        <p>(15) 98823-5261</p>
+        <p>(15) 3388-0444</p>
 
         <h3 class="tit">Endereço</h3>
-        <p>12345 Fake St NoWhere</p>
+        <p>R. Duque de Caxias, 494 - Mangal <br> Sorocaba - SP, 18040-350</p>
 
         <h3 class="tit">Email</h3>
-        <p>educa@gmail.com</p>
+        <p>susorocaba@sesisp.org.br</p>
       </div>
 
       <form action="">
@@ -226,9 +262,10 @@
           <input required id="assunto" type="text" class="input" />
           <label for="assunto">Assunto</label>
         </div>
+
+          <button class="btn-enviar">Enviar</button>
+        
       </form>
     </footer>
-
-    <script src="scripts.js"></script>
   </body>
 </html>
