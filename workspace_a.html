@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividades</title>
-    <link rel="stylesheet" href="atividades.css" />
-    <script src="atividades.js" defer></script>
+    <title>Workspace</title>
+    <link rel="stylesheet" href="workspace.css" />
+    <script src="workspace.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,7 +19,7 @@
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="login.html">Login</a></li> 
-          <li><a href="ano_turma.html"><span>Atividades</span></a></li>
+          <li><a href="ano_turma.html"><span>Workspace</span></a></li>
           <li>
             <a href="#"><i class="fa-solid fa-bowl-food"></i></a>
           </li>
@@ -30,7 +30,12 @@
     <main>
       <div class="container">
         <div class="main-left">
+          
+          <div id="welcomeMessage">
+            Bem vindo! Sua sala é: 3° A
+          </div>
           <div class="textfield">
+
             <h1>
               Espaço de <br />
               <span class="destaque">Atividades</span>
@@ -59,15 +64,14 @@
       </section>
     </main>
     
-    <section class="student">
+    <!-- <section class="student">
       <div class="face">
         <div class="eyes">
           <div class="eye"></div>
           <div class="eye"></div>
         </div>
       </div>
-
-    </section>
+    </section> -->
 
     <div class="container-licao">
       <div class="materia">
@@ -98,12 +102,12 @@
           <div class="descricao">
             <h1>Descrição</h1>
             <textarea id="userText" rows="4" cols="50"></textarea>
-            <br />
             <button class="save-text" onclick="saveText()">Salvar</button>
           </div>
         </div>
      </div>
 
+     <!-- calendario -->
       <!-- Main wrapper for the calendar application -->
     <div class="wrapper">
       <div class="container-calendar">
