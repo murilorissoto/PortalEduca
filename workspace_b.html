@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workspace</title>
+    <link rel="stylesheet" href="workspace.css" />
+    <script src="workspace.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">Portal Educa</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li> 
+          <li><a href="ano_turma.html"><span>Workspace</span></a></li>
+          <li>
+            <a href="#"><i class="fa-solid fa-bowl-food"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="main-left">
+          <div class="textfield">
+            <h1>
+              Espaço de <br />
+              <span class="destaque">Atividades</span>
+            </h1>
+            <h5>Time To Get Your <span class="destaque">Work</span> Done</h5>
+          </div>
+        </div>
+
+        <div class="main-right">
+          <img src="Img/Learning-cuate.png" alt="Imagem de Atividades" /> 
+           </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <section class="button-grid">
+        <button class="btn">MAT</button>
+        <button class="btn">LP</button>
+        <button class="btn">HIS</button>
+        <button class="btn">BIO</button>
+        <button class="btn">GEO</button>
+        <button class="btn">ING</button>
+        <button class="btn">QUÍ</button>
+      </section>
+    </main>
+    
+    <section class="student">
+      <div class="face">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="container-licao">
+      <div class="materia">
+        <label class="picture" for="picture_input" tabindex="0">
+          <div class="titulo"><h1>Título da lição*</h1></div>
+          <span class="picture_image">Escolha uma imagem</span>
+          <img id="selected_image" class="hidden" alt="Imagem escolhida" />
+        </label>
+        <input type="file" accept="image/*" id="picture_input" />
+        <div id="image_preview" class="image_preview"></div>
+      </div>
+      
+        <div class="arquivos">
+          <div class="link_area">
+            <label for="link_input">Insira um link para auxílio da atividade/conteúdo</label>
+            <input type="url" id="link_input" placeholder="https://exemplo.com" />
+          </div>
+      
+          <div class="file_area">
+            <label for="file_input" class="file_label">Escolha um arquivo (PowerPoint, etc.):</label>
+            <input type="file" accept=".ppt,.pptx" id="file_input" />
+            <div id="file_preview" class="file_preview"></div>
+            <button id="download_button" class="download_button">
+              Baixar arquivo
+            </button>
+          </div> 
+      
+          <div class="descricao">
+            <h1>Descrição</h1>
+            <textarea id="userText" rows="4" cols="50"></textarea>
+            <br />
+            <button class="save-text" onclick="saveText()">Salvar</button>
+          </div>
+        </div>
+     </div>
+
+      <!-- Main wrapper for the calendar application -->
+    <div class="wrapper">
+      <div class="container-calendar">
+          <div id="left">
+              <h1>Calendário escolar</h1>
+              <div id="event-section">
+                  <h3>Adicionar atividade</h3>
+                  <input type="date" id="eventDate">
+                  <input type="text"
+                      id="eventTitle"s
+                      placeholder="titúlo da atividade">
+                  <input type="text"
+                      id="eventDescription"
+                      placeholder="descrição da atividade">
+                  <button id="addEvent" onclick="addEvent()">
+                      Adicionar
+                  </button>
+              </div>
+              <div id="reminder-section">
+                  <h3>Lembretes</h3>
+                  <!-- List to display reminders -->
+                  <ul id="reminderList">
+                      <li data-event-id="1">
+                          <strong>Event title</strong>
+                          - Event Description na Event Date
+                          <button class="delete-event"
+                              onclick="deleteEvent(1)">
+                              Apagar
+                          </button>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div id="right">
+              <h3 id="monthAndYear"></h3>
+              <div class="button-container-calendar">
+                  <button id="previous"
+                          onclick="previous()">
+                      ‹
+                  </button>
+                  <button id="next"
+                          onclick="next()">
+                      ›
+                  </button>
+              </div>
+              <table class="table-calendar"
+                  id="calendar"
+                  data-lang="en">
+                  <thead id="thead-month"></thead>
+                  <!-- Table body for displaying the calendar -->
+                  <tbody id="calendar-body"></tbody>
+              </table>
+              <div class="footer-container-calendar">
+                  <label for="month">Pular para </label>
+                  <!-- Dropdowns to select a specific month and year -->
+                  <select id="month" onchange="jump()">
+                      <option value=0>Jan</option>
+                      <option value=1>Fev</option>
+                      <option value=2>Mar</option>
+                      <option value=3>Abr</option>
+                      <option value=4>Maio</option>
+                      <option value=5>Jun</option>
+                      <option value=6>Jul</option>
+                      <option value=7>Ago</option>
+                      <option value=8>Set</option>
+                      <option value=9>Out</option>
+                      <option value=10>Nov</option>
+                      <option value=11>Dez</option>
+                  </select>
+                  <!-- Dropdown to select a specific year -->
+                  <select id="year" onchange="jump()"></select>
+              </div>
+          </div>
+      </div>
+  </div>
+   
+  </body>
+</html>
 
