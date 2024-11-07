@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="ano_turma.css">
+  <script src="ano_turma.js" defer></script>
   <title>Ano e Turma</title>
 </head>
 
@@ -20,20 +21,20 @@
         <h1>Turma</h1>
         <div class="textfield">
           <select name="Ano" id="ano">
-            <option value="" disabled selected>Escolha Seu Ano</option>
+            <label for="seletorPagina">Escolha uma página:</label>
             <option value="3">3°</option>
           </select>
         </div>
         <div class="textfield">
-          <select name="serie" id="serie">
+          <select id="seletorPagina">
             <option value="" disabled selected>Escolha sua Série</option>
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
-            <option value="d">D</option>
+            <option value="workspace_a.html">A</option>
+            <option value="workspace_b.html">B</option>
+            <option value="workspace_c.html">C</option>
+            <option value="workspace_d.html">D</option>
           </select>
         </div>
-        <button class="btn-login"><a href="atividades.html">Entrar</a></button>
+        <button onclick="redirecionarPagina()" class="btn-login">Entrar</button>
       </div>
     </div>
   </div>
