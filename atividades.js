@@ -1,4 +1,132 @@
-// script.js
+class MobileNavbar {
+  constructor(mobileMenu, navList, navLinks) {
+    this.mobileMenu = document.querySelector(mobileMenu);
+    this.navList = document.querySelector(navList);
+    this.navLinks = document.querySelectorAll(navLinks);
+    this.activeClass = "active";
+
+    this.handleCLick = this.handleCLick.bind(this);
+  }
+
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      console.log(index);
+      
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards 0.3s`);
+    });
+  }
+
+  handleCLick() {
+    console.log(this);
+    this.navList.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
+
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleCLick);
+  }
+
+  init() {
+    if (this.mobileMenu) {
+      this.addClickEvent();
+    }
+    return this;
+  }
+}
+
+const mobileNavbar = new MobileNavbar(
+  ".mobile-menu",
+  ".nav-list",
+  ".nav-list li"
+);
+
+mobileNavbar.init();
+
+// Adiciona o evento de movimento do mouse no body
+document.querySelector('body').addEventListener('mousemove', eyeball);
+
+function eyeball(event) {
+    // Seleciona todos os elementos com a classe .eye
+    var eyes = document.querySelectorAll('.eye');
+    
+    // Para cada olho, calculamos a direção para onde ele deve olhar
+    eyes.forEach(function(eye) {
+        // Calcula o centro do olho
+        let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+        let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+        // Calcula o ângulo entre o centro do olho e o mouse
+        let radian = Math.atan2(event.pageY - y, event.pageX - x); // Inverte o Y para o mouse se mover de maneira esperada
+        let rotation = (radian * (180 / Math.PI)) - 90; // Converte de radiano para grau
+
+        // Aplica a rotação no olho
+        eye.style.transform = "rotate(" + rotation + "deg)";
+    });
+}
+
+
+
+
+// Descarrega Arquivo de imagem
+document.getElementById('picture_input').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const label = document.querySelector('.picture');
+  const img = document.getElementById('selected_image');
+
+  if (file) {
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+      img.src = e.target.result;
+      img.classList.remove('hidden'); // Mostra a imagem
+      label.querySelector('.picture_image').style.display = 'none'; // Esconde o texto
+    };
+    
+    reader.readAsDataURL(file);
+  }
+});
+
+document.getElementById('file_input').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const previewDiv = document.getElementById('file_preview');
+
+  if (file) {
+    previewDiv.textContent = `Arquivo escolhido: ${file.name}`; // Mostra o nome do arquivo
+  } else {
+    previewDiv.textContent = ''; // Limpa a área de pré-visualização se nenhum arquivo for escolhido
+  }
+});
+
+document.getElementById('file_input').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const previewDiv = document.getElementById('file_preview');
+  const downloadButton = document.getElementById('download_button');
+
+  if (file) {
+    previewDiv.textContent = `Arquivo escolhido: ${file.name}`; // Mostra o nome do arquivo
+    downloadButton.classList.remove('hidden'); // Mostra o botão de download
+    
+    // Define a função de download ao clicar no botão
+    downloadButton.onclick = function() {
+      const url = URL.createObjectURL(file); // Cria um URL temporário
+      const a = document.createElement('a'); // Cria um elemento <a>
+      a.href = url;
+      a.download = file.name; // Nome do arquivo para download
+      document.body.appendChild(a); // Adiciona ao corpo
+      a.click(); // Simula o clique para baixar
+      document.body.removeChild(a); // Remove o elemento <a>
+      URL.revokeObjectURL(url); // Libera a URL temporária
+    };
+  } else {
+    previewDiv.textContent = ''; // Limpa a área de pré-visualização se nenhum arquivo for escolhido
+    downloadButton.classList.add('hidden'); // Esconde o botão de download
+  }
+});
+
+// CALENDARIO
+
 
 // Define an array to store events
 let events = [];
@@ -124,7 +252,7 @@ let months = [
     "Julho",
     "Agosto",
     "Setembro",
-    "Outubrp",
+    "Outubro",
     "Novembro",
     "Dezembro"
 ];
